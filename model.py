@@ -1,3 +1,7 @@
+"""
+Pytorch model with linear layers.
+"""
+
 import torch
 import torch.nn as nn
 
@@ -12,4 +16,5 @@ class NeuralNet(nn.Module):
         out = nn.functional.relu(self.l1(x))
         out = nn.functional.relu(self.l2(x))
         out = self.l3(x)
+        # no activation and no softmax due adam optimizer in Pytorch
         return out
